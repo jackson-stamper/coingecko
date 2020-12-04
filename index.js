@@ -10,6 +10,8 @@ app.use(express.json());
 //routes
 
 //get all todos
+
+//all coins in db listed below
 app.get("/ethereum", async(req,res) => {
     try {
         const allData = await pool.query("SELECT * FROM ethereum");
