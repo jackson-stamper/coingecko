@@ -19,6 +19,15 @@ app.get("/ethereum", async(req,res) => {
     }
 })
 
+app.get("/chainlink", async(req,res) => {
+    try {
+        const allData = await pool.query("SELECT * FROM chainlink");
+        res.json(allData.rows);
+    } catch (error) {
+        console.error(error.message)
+    }
+})
+
 app.listen(5000, () => {
     console.log("server has started on port 5000");
 });
